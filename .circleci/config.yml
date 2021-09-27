@@ -24,12 +24,12 @@ jobs:
           command: 'apt-get update && apt-get install -y cmake'
       - run:
           name: Creating Build Files
-          command: 'cmake -S tests -B build'
+          command: 'cmake'
       - run:
           name: Creating Binary Files
-          command: 'cmake --build build'
+          command: 'cmake --build'
       - run:
-          name: Point Unit Testing
+          name: Testing
           command: './bin/dummy_testing_3031'
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
