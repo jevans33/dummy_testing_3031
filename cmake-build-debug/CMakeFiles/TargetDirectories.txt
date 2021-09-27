@@ -1,0 +1,3 @@
+/Users/Jenny/CLionProjects/dummy_testing_3031/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/Jenny/CLionProjects/dummy_testing_3031/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/Jenny/CLionProjects/dummy_testing_3031/cmake-build-debug/CMakeFiles/dummy_testing_3031.dir
