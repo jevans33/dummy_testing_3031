@@ -27,7 +27,7 @@ jobs:
           command: 'cmake'
       - run:
           name: Creating Binary Files
-          command: 'cmake --build build'
+          command: 'cmake --build .'
       - run:
           name: Testing
           command: './bin/dummy_testing_3031'
