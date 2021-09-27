@@ -26,6 +26,9 @@ jobs:
           name: Creating Build Files
           command: 'cmake'
       - run:
+          name: Creating Binary Files
+          command: 'cmake --build build'
+      - run:
           name: Testing
           command: './bin/dummy_testing_3031'
 # Invoke jobs via workflows
