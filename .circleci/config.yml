@@ -8,11 +8,16 @@ jobs:
     # Specify the execution environment.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     docker:
-      - image: gcc:latest
+      - image: debian:stable-slim
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - checkout
+      - run:
+          name:  Getting tools & libraries
+          command: 'apt-get update -y && apt-get install -y --no-install-recommends openssh-server curl gcc g++ clang \
+          build-essential cmake unzip sudo && apt-get autoclean && apt-get autoremove && apt-get clean && \
+          rm -rf /var/lib/apt/lists/*'
       - run: 
           name:  Making directories
           command:  'mkdir -p build && cd build'
