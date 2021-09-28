@@ -13,6 +13,9 @@ jobs:
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - checkout
+      - run: 
+          name:  Making directories
+          command:  'mkdir -p build && cd build'
       - run:
           name: Compiling program
           command: 'gcc -o tests tests.cpp'
