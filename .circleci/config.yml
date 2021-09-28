@@ -15,7 +15,7 @@ jobs:
       - checkout
       - run:
           name: Compiling program
-          command: 'gcc -o tests.cpp *.o'
+          command: 'gcc tests.cpp -o tests'
       - run:
           name: Checking program exists
           command: 'ls -la'
