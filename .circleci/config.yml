@@ -8,29 +8,20 @@ jobs:
     # Specify the execution environment.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     docker:
-      - image: "debian:stretch"
+      - image: gcc
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - checkout
       - run:
-          name: Installing SUDO
-          command: 'apt-get update && apt-get install -y sudo && rm -rf /var/lib/apt/lists/*'
+          name: Compiling program
+          command: 'gcc -o tests.cpp *.o'
       - run:
-          name: Installing GCC
-          command: 'apt-get update && apt-get install -y gcc g++'
+          name: Checking program exists
+          command: 'ls -la'
       - run:
-          name: Install CMAKE
-          command: 'apt-get update && apt-get install -y cmake'
-      - run:
-          name: Creating Build Files
-          command: 'cmake .'
-      - run:
-          name: Creating Binary Files
-          command: 'cmake --build ./'
-      - run:
-          name: Testing
-          command: './bin/dummy_testing_3031'
+          name: Running program
+          command: './tests'
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
