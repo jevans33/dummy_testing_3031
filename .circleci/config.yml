@@ -16,7 +16,7 @@ jobs:
       - run:
           name:  Getting tools & libraries
           command: 'apt-get update -y && apt-get install -y --no-install-recommends openssh-server curl gcc g++ clang \
-          build-essential cmake unzip sudo && apt-get autoclean && apt-get autoremove && apt-get clean && \
+          cmake unzip sudo && apt-get autoclean && apt-get autoremove && apt-get clean && \
           rm -rf /var/lib/apt/lists/*'
       - run: 
           name:  Making directories
