@@ -17,8 +17,8 @@ jobs:
           name:  Making directories
           command:  'mkdir -p build && cd build'
       - run:
-          name: Compiling program
-          command: 'gcc -o tests tests.cpp'
+          name: Setup cmake
+          command: 'cmake --build . --config Release'
       - run:
           name: Checking program exists
           command: 'ls -la'
