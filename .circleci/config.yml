@@ -18,6 +18,9 @@ jobs:
           command: 'apt-get update -y && apt-get install -y --no-install-recommends openssh-server curl gcc g++ clang \
           cmake unzip sudo && apt-get autoclean && apt-get autoremove && apt-get clean && \
           rm -rf /var/lib/apt/lists/*'
+      - run:
+          name: Upgrade all packages
+          command: 'sudo apt-get upgrade'
       - run: 
           name:  Making directories
           command:  'mkdir -p build && cd build'
